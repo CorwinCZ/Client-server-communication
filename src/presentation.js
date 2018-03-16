@@ -15,6 +15,9 @@ import {
 
 import createTheme from 'spectacle/lib/themes/default';
 
+// Images
+import clientServerModel from './assets/client-server-model.png';
+
 require('normalize.css');
 
 const theme = createTheme(
@@ -48,7 +51,7 @@ export default class Presentation extends React.Component {
           <Heading size={3} textColor="tertiary">
             {`Client ↔️ Server`}
           </Heading>
-          <Image src={require('./assets/client-server-model.png')} />
+          <Image src={clientServerModel} />
           <List>
             <Appear>
               <ListItem size={30}>Server - any remote computer</ListItem>
