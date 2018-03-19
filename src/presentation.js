@@ -1,13 +1,10 @@
 import React from 'react';
 import {
   Appear,
-  BlockQuote,
-  Cite,
   Deck,
   Heading,
   ListItem,
   List,
-  Quote,
   Slide,
   Text,
   Image,
@@ -17,6 +14,9 @@ import createTheme from 'spectacle/lib/themes/default';
 
 // Images
 import clientServerModel from './assets/client-server-model.png';
+import graphQL from './assets/graphql.gif';
+import memeNo from './assets/meme-no.jpg';
+import restResponse from './assets/rest-response.png';
 
 require('normalize.css');
 
@@ -104,7 +104,7 @@ export default class Presentation extends React.Component {
               <ListItem size={30}>Only HTTP server needed</ListItem>
             </Appear>
             <Appear>
-              <ListItem size={30}>Apache / Nginx</ListItem>
+              <ListItem size={30}>Apache / Nginx ...</ListItem>
             </Appear>
             <Appear>
               <ListItem size={30}>No modifications / additions</ListItem>
@@ -134,15 +134,36 @@ export default class Presentation extends React.Component {
               <ListItem size={30}>FTP server needed</ListItem>
             </Appear>
             <Appear>
-              <ListItem size={30}>Login needed</ListItem>
-            </Appear>
-            <Appear>
               <ListItem size={30}>Works with files / folders only</ListItem>
             </Appear>
             <Appear>
-              <ListItem size={30}>Read / Write / Delete</ListItem>
+              <ListItem size={30}>Enables CRUD operations</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem size={30}>
+                Modification of file content must be done externally (editors)
+              </ListItem>
             </Appear>
           </List>
+        </Slide>
+
+        {/* CRUD */}
+        <Slide transition={['fade']}>
+          <Heading size={1} textColor="tertiary">
+            CRUD operations
+          </Heading>
+          <Appear>
+            <Text size={4}>Create</Text>
+          </Appear>
+          <Appear>
+            <Text size={4}>Read</Text>
+          </Appear>
+          <Appear>
+            <Text size={4}>Update</Text>
+          </Appear>
+          <Appear>
+            <Text size={4}>Delete</Text>
+          </Appear>
         </Slide>
 
         <Slide transition={['fade']}>
@@ -208,6 +229,11 @@ export default class Presentation extends React.Component {
               <ListItem size={30}>One resource == one URL</ListItem>
             </Appear>
             <Appear>
+              <ListItem size={30} textColor="tertiary">
+                {'https://domain.io/api/v2/products/?category=3&material=2,3'}
+              </ListItem>
+            </Appear>
+            <Appear>
               <ListItem size={30}>Leverages standard HTTP methods</ListItem>
             </Appear>
             <Appear>
@@ -217,9 +243,17 @@ export default class Presentation extends React.Component {
               <ListItem size={30}>Is "weak" standard</ListItem>
             </Appear>
             <Appear>
+              <ListItem size={30}>Resource is server "as-is"</ListItem>
+            </Appear>
+            <Appear>
               <ListItem size={30}>Every impelementation is different</ListItem>
             </Appear>
           </List>
+        </Slide>
+
+        {/* REST - example */}
+        <Slide>
+          <Image src={restResponse} />
         </Slide>
 
         {/* GraphQL */}
@@ -228,7 +262,7 @@ export default class Presentation extends React.Component {
             GraphQL
           </Heading>
           <Appear>
-            <Text size={4}>REST done "right"</Text>
+            <Text size={4}>Graph Query Language</Text>
           </Appear>
         </Slide>
 
@@ -245,10 +279,16 @@ export default class Presentation extends React.Component {
               <ListItem size={30}>Only one URL for all actions</ListItem>
             </Appear>
             <Appear>
-              <ListItem size={30}>Server describes data & actions </ListItem>
+              <ListItem size={30}>Data are modeled as a graph</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem size={30}>Server describes data & actions</ListItem>
             </Appear>
             <Appear>
               <ListItem size={30}>Client asks only for data he wants</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem size={30}>Self-discovery of API is build-in</ListItem>
             </Appear>
             <Appear>
               <ListItem size={30}>
@@ -256,6 +296,10 @@ export default class Presentation extends React.Component {
               </ListItem>
             </Appear>
           </List>
+        </Slide>
+
+        <Slide>
+          <Image src={graphQL} />
         </Slide>
 
         <Slide transition={['fade']}>
@@ -271,9 +315,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={['fade']}>
-          <Heading size={1} textColor="tertiary">
-            No.
-          </Heading>
+          <Image src={memeNo} />
           <Appear>
             <Text size={1}>Ok, sometimes it can be usefull...</Text>
           </Appear>
@@ -338,9 +380,6 @@ export default class Presentation extends React.Component {
           </Heading>
           <List>
             <Appear>
-              <ListItem size={30}>Backward compatible with HTTP</ListItem>
-            </Appear>
-            <Appear>
               <ListItem size={30}>Client opens connection to server</ListItem>
             </Appear>
             <Appear>
@@ -354,7 +393,7 @@ export default class Presentation extends React.Component {
             Q&A
           </Heading>
           <Heading size={3}>Thanks for attention!</Heading>
-          <Text>https://github.com/CorwinCZ</Text>
+          <Text>{'https://github.com/CorwinCZ/Client-server-communication'}</Text>
         </Slide>
       </Deck>
     );
